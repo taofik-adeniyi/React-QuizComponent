@@ -16,7 +16,8 @@ class QuizQuestion extends Component {
   }
   render() {
     return(
-      <main>
+      <div>
+        <main>
         <section>
           <p>{this.props.quiz_question.instruction_text}</p>
         </section>
@@ -32,6 +33,32 @@ class QuizQuestion extends Component {
         </section>
         {this.state.incorrectAnswer ? <p className="error">Sorry, that's not right</p>: null}
       </main>
+      
+      <div className="two">
+        <div className="firstrow">
+            <div className="title"><h3>Question 1</h3></div>
+            <div className="submit"><button>Submit</button></div>
+        </div>
+
+      <div className="questionbody">
+          <div className="question">
+            What is the Question ?
+          </div>
+          <div className="questionsoption">
+              <ul>
+                  <li>Sample Answer 1</li>
+                  <li>Sample Answer 2</li>
+                  <li>Sample Answer 3</li>
+                  <li>Sample Answer 4</li>
+              </ul>
+          </div>
+          <div className="controlbutton">
+              <button>Previous</button>
+              <button>Next Questions</button>
+          </div> 
+      </div>
+      </div>
+      </div>
     )
   }
 }

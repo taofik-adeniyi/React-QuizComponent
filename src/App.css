@@ -1,4 +1,4 @@
-.QuizQuestion {
+/* .QuizQuestion {
   display: flex;
   justify-content: center;
   font-size: 2em;
@@ -32,4 +32,8 @@ button {
 }
 .error {
   color: red;
+} */
+
+.question-pad {
+  padding: 50px;
 }

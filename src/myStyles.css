@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+    box-sizing: border-box;
+}
+.one {
+    width: 70%;
+    height: 70px;
+    border-bottom: 2px solid blue;
+    margin: 15px auto;
+}
+.two {
+    width: 70%;
+    border: 2px solid blue;
+    margin: 10px auto;
+}
+.firstrow {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.firstrow h3 {
+    padding-left: 50px;
+}
+.submit button {
+    width: 100px;
+    padding: 10px;
+    margin: 10px 0 0 300px;
+}
+.questionbody {
+    width: 90%;;
+    border: 2px solid blue;
+    margin: 30px auto;
+}
+.question {
+    border-bottom: 2px solid blue;
+    padding: 25px 5px 25px 20px
+}
+.questionsoption {
+    border-bottom: 2px solid blue;
+    height: 150px;
+}
+.controlbutton {
+    height: 50px;
+}
+.controlbutton button {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 150px;
+    height: 35px;
+}
+.questioninlogicalselection {
+    border: 2px solid blue;
+    margin: 10px auto 40px auto;
+    height: 100px;
+    width: 90%;
+}
+.one-two {
+    color: blue;
+}
+.primary {
+    color: orange;
+}
+.font-xl {
+    font-size: 72px;
+}

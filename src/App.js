@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import Quiz from './Quiz.js'
 import './App.css'
+import Header from './containers/Header'
+import Questions from './containers/Questions'
+// import Inline from './Inline'
+import StyleSheet from './StyleSheet'
 
 
 class App extends Component {
   render() {
     return (
-      <Quiz />
+      <div className="container">
+        {/* <Inline /> */}
+        {/* <StyleSheet /> */}
+        <Header />
+        {/* <Questions /> */}
+        <Quiz />
+      </div>
     )
   }
 }
