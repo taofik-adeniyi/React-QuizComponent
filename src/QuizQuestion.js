@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import QuizQuestionButton from './QuizQuestionButton.js'
+import DisplayAnswer from './DisplayAnswer'
+
 
 class QuizQuestion extends Component {
   constructor(props) {
@@ -21,7 +23,11 @@ class QuizQuestion extends Component {
                 {` ${this.props.quiz_question.id}`}
               </h3>
             </div>
-            <div className="submit"><button>Submit</button></div>
+            <div className="submit">
+              <button>
+                Submit
+              </button>
+            </div>
         </div>
 
         <div className="questionbody">

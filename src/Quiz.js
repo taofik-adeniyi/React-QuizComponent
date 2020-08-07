@@ -15,20 +15,40 @@ class Quiz extends Component {
   }
 
   showNextQuestion() {
-    this.setState((state) => {
-      return { quiz_position: this.state.quiz_position + 1 }
-    })
-    // console.log(quiz_position)
+    
+    // if(this.state.quiz_position > quizData.quiz_questions.length - 1){
+    //   this.setState((state) => {
+    //     return { quiz_position: 0}
+    //   })
+    // }else {
+      console.log('aaaaaaaaaaaaaaa' + quizData.quiz_questions.length);
+      if(this.state.quiz_position === quizData.quiz_questions.length - 1){
+          // console.log(quizData.quiz_questions.length)
+          this.setState((state) => {
+            return { quiz_position: 0}
+          })
+          console.log(this.state.quiz_position)
+      } else {
+          this.setState((state) => {
+            return { quiz_position: this.state.quiz_position + 1 }
+          }) 
+      }
+    // }
   }
 
   showPreviousQuestion() {
-    this.setState((state) => {
-      return { quiz_position: this.state.quiz_position - 1}
-    })
+    if (this.state.quiz_position === 0){
+      
+    }else{
+      this.setState((state) => {
+        return { quiz_position: this.state.quiz_position - 1}
+      })
+    }
   }
 
+
   render() {
-    console.log(this.state.quiz_position)
+    // console.log(quizData.quiz_questions.length)
     return (
       <div>      
         <QuizQuestion

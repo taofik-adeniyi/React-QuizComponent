@@ -8,9 +8,9 @@ class QuizQuestionButton extends Component {
   render() {
     return (
       <li>
-        <button>
+        <div>
           {this.props.answer_text}
-        </button>
+        </div>
       </li>
     )
   }
