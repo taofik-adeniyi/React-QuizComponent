@@ -5,7 +5,7 @@ class StyleSheet extends Component {
     render() {
         return (
             <div className="primary font-xl">
-                StyleSheet
+                
             </div>
         )
     }

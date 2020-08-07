@@ -10,6 +10,11 @@ body {
     border-bottom: 2px solid blue;
     margin: 15px auto;
 }
+.sign {
+    width: 100px;
+    padding: 2px;
+    margin: 2px;
+}
 .two {
     width: 70%;
     border: 2px solid blue;
@@ -22,24 +27,35 @@ body {
 }
 .firstrow h3 {
     padding-left: 50px;
+    padding-top: 20px;
 }
 .submit button {
     width: 100px;
     padding: 10px;
-    margin: 10px 0 0 300px;
+    margin: 10px 0 0 70%;
 }
 .questionbody {
     width: 90%;;
     border: 2px solid blue;
-    margin: 30px auto;
+    margin: 25px auto;
 }
 .question {
     border-bottom: 2px solid blue;
     padding: 25px 5px 25px 20px
 }
 .questionsoption {
+    margin: 10px 0 10px 0;
     border-bottom: 2px solid blue;
-    height: 150px;
+}
+.questionsoption ul {
+    margin: 0;
+    padding: 0;
+}
+.questionsoption ul li {
+    list-style-type: none;
+    line-height: 1.5em;
+    margin: 4px 0 4px 0;
+    border-bottom: 1px solid #333;
 }
 .controlbutton {
     height: 50px;

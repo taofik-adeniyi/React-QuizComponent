@@ -16,8 +16,8 @@ class Header extends Component{
                     <a href="" className="navbar-brand">QuizWebApp By TofBabs</a>
                 </div>
                 <div>
-                    <button>Sign Up</button>
-                    <button>Sign In</button>
+                    <button className="sign">Sign Up</button>
+                    <button className="sign">Sign In</button>
                 </div>
             </div>
             </div>
