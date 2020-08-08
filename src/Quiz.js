@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import QuizQuestion from './QuizQuestion.js'
 import quizData from './quiz_data'
-
+import DisplayAnswer from './DisplayAnswer'
 
 class Quiz extends Component {
 
@@ -10,8 +10,9 @@ class Quiz extends Component {
     this.state = {
       quiz_position: 0
     }
-    this.showNextQuestion = this.showNextQuestion.bind(this);
-    this.showPreviousQuestion = this.showPreviousQuestion.bind(this);
+    this.showNextQuestion = this.showNextQuestion.bind(this)
+    this.showPreviousQuestion = this.showPreviousQuestion.bind(this)
+    this.handleResetClick = this.handleResetClick.bind(this)
   }
 
   showNextQuestion() {
@@ -46,16 +47,23 @@ class Quiz extends Component {
     }
   }
 
+  handleResetClick() {
+    this.setState({ quiz_position: 0 })
+  }
+
 
   render() {
     // console.log(quizData.quiz_questions.length)
+    const isQuizEnd = ( (this.state.quiz_position +1) === quizData.quiz_questions.length )
     return (
-      <div>      
+      <div>
+        {isQuizEnd ? <DisplayAnswer resetClickHandler={this.handleResetClick }/> :      
         <QuizQuestion
           quiz_question={quizData.quiz_questions[this.state.quiz_position]}
           showNextQuestion={this.showNextQuestion}
           showPrevQuestion={this.showPreviousQuestion}
         />
+        }
       </div>
     )
   }
