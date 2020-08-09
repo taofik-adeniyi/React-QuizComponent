@@ -24,7 +24,7 @@ class QuizQuestion extends Component {
               </h3>
             </div>
             <div className="submit">
-              <button>
+              <button onClick={() => this.props.submitQuestion()}>
                 Submit
               </button>
             </div>

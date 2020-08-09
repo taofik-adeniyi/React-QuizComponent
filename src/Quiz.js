@@ -8,11 +8,13 @@ class Quiz extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      quiz_position: 0
+      quiz_position: 0,
+      finished: "false"
     }
     this.showNextQuestion = this.showNextQuestion.bind(this)
     this.showPreviousQuestion = this.showPreviousQuestion.bind(this)
     this.handleResetClick = this.handleResetClick.bind(this)
+    this.submitQuestion = this.submitQuestion.bind(this)
   }
 
   showNextQuestion() {
@@ -22,13 +24,13 @@ class Quiz extends Component {
     //     return { quiz_position: 0}
     //   })
     // }else {
-      console.log('aaaaaaaaaaaaaaa' + quizData.quiz_questions.length);
+      // console.log('aaaaaaaaaaaaaaa' + quizData.quiz_questions.length);
       if(this.state.quiz_position === quizData.quiz_questions.length - 1){
           // console.log(quizData.quiz_questions.length)
           this.setState((state) => {
             return { quiz_position: 0}
           })
-          console.log(this.state.quiz_position)
+          // console.log(this.state.quiz_position)
       } else {
           this.setState((state) => {
             return { quiz_position: this.state.quiz_position + 1 }
@@ -51,10 +53,23 @@ class Quiz extends Component {
     this.setState({ quiz_position: 0 })
   }
 
+  submitQuestion() {
+    if (this.state.finished === "false"){
+      this.setState((state) => {
+        return { finished: "true"}
+      })
+    // console.log(this.state.finished)
+    }
+    // else{
+    //   this.setState((state) => {
+    //     return { finished: "true"}
+    //   })
+    // }
+  }
 
   render() {
     // console.log(quizData.quiz_questions.length)
-    const isQuizEnd = ( (this.state.quiz_position +1) === quizData.quiz_questions.length )
+    const isQuizEnd = ( (this.state.finished) === "true" )
     return (
       <div>
         {isQuizEnd ? <DisplayAnswer resetClickHandler={this.handleResetClick }/> :      
@@ -62,6 +77,7 @@ class Quiz extends Component {
           quiz_question={quizData.quiz_questions[this.state.quiz_position]}
           showNextQuestion={this.showNextQuestion}
           showPrevQuestion={this.showPreviousQuestion}
+          submitQuestion={this.submitQuestion}
         />
         }
       </div>
