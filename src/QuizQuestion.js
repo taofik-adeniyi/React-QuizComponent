@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import QuizQuestionButton from './QuizQuestionButton.js'
 import DisplayAnswer from './DisplayAnswer'
-
+import LogicalSelection from './LogicalSelection'
 
 class QuizQuestion extends Component {
   constructor(props) {
@@ -61,8 +61,29 @@ class QuizQuestion extends Component {
                 </button>
             </div>
           </div>
+          <div className="questioninlogicalselection">
+            <h4>Questions in Logical Selection</h4>
+                {
+                  this.props.LogicDisplay.map(function(id, index)  {
+                  return (
+                    <button onClick={() => this.props.showNumber()}>
+                      <LogicalSelection 
+                    key={index}
+                    id={id.id}
+                    // clickin={this.props.showQuestionNumber()}
+                    />
+                    {/* // <button onClick={() => this.props.showQuestionNumber()}>
+                    //   {id.id}
+                    // </button> */}
+                    </button>
+                  )
+                  })
+                }
+          </div>
       </div>
+      
       </div>
+      
     )
   }
 }

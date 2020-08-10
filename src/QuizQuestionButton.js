@@ -9,7 +9,12 @@ class QuizQuestionButton extends Component {
     return (
       <li>
         <div>
-          {this.props.answer_text}
+          <a href="">
+            <button></button>
+            <button>
+            {this.props.answer_text}
+            </button>
+          </a>
         </div>
       </li>
     )

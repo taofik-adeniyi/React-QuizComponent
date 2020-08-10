@@ -11,12 +11,17 @@ class Quiz extends Component {
       quiz_position: 0,
       finished: "false"
     }
+    
     this.showNextQuestion = this.showNextQuestion.bind(this)
     this.showPreviousQuestion = this.showPreviousQuestion.bind(this)
     this.handleResetClick = this.handleResetClick.bind(this)
     this.submitQuestion = this.submitQuestion.bind(this)
+    this.showNumber = this.showNumber.bind(this)
+    
   }
 
+  
+  
   showNextQuestion() {
     
     // if(this.state.quiz_position > quizData.quiz_questions.length - 1){
@@ -38,6 +43,7 @@ class Quiz extends Component {
       }
     // }
   }
+
 
   showPreviousQuestion() {
     if (this.state.quiz_position === 0){
@@ -67,9 +73,22 @@ class Quiz extends Component {
     // }
   }
 
+  showNumber() {
+    if(2> this.state.quiz_position){
+      // console.log("okay")
+      this.setState((state) =>{
+        return {quiz_postion: 1}
+      })
+    }
+    // this.setState({event.target.value} - 1)
+  }
+
   render() {
     // console.log(quizData.quiz_questions.length)
     const isQuizEnd = ( (this.state.finished) === "true" )
+    
+    // const LogicDisplay =  quizData.quiz_questions
+    
     return (
       <div>
         {isQuizEnd ? <DisplayAnswer resetClickHandler={this.handleResetClick }/> :      
@@ -78,6 +97,8 @@ class Quiz extends Component {
           showNextQuestion={this.showNextQuestion}
           showPrevQuestion={this.showPreviousQuestion}
           submitQuestion={this.submitQuestion}
+          LogicDisplay={quizData.quiz_questions}
+          showNumber={this.showNumber}
         />
         }
       </div>

@@ -70,8 +70,12 @@ body {
 .questioninlogicalselection {
     border: 2px solid blue;
     margin: 10px auto 40px auto;
-    height: 100px;
     width: 90%;
+    padding: 10px;
+}
+.questioninlogicalselection button {
+    margin: 2px;
+    min-width: 35px;
 }
 .one-two {
     color: blue;
